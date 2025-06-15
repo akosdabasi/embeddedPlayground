@@ -45,5 +45,9 @@ project-root/
 
 ## Project History
 1. Adding a simple linker script
+2. Adding typedefs.h 
+    - for the moment we dont have standard library
+    - so we dont have access to types like uint32_t from stdint.h
+    - these typedefs are platform dependent
 
 
