@@ -53,12 +53,12 @@ SECTIONS{
     } > flash
 
 
-    .data : AT (flash) /*load to flash*/
+    .data :
     {
       _sdata = .;             
       *(.data SORT(.data.*))  /*sections will be placed in memory in a stable order*/
       _edata = .;             
-    } > sram /*but execute from sram*/
+    } > flash AT > sram /*load to flash but execute from sram*/
 
     _sidata = LOADADDR(.data);
 
