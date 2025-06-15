@@ -15,10 +15,35 @@
 ## Why This Project?
 
 This repository was created as a **foundation** for future embedded projects. The goal is to offer:
-- **Transparency**: All components — from vector table to memory layout — are explicitly defined. The goal is to make it relatively easy to see how every singe byte ends up in the memory.
+- **Transparency**: All components — from vector table to memory layout — are explicitly defined. The goal is to make it relatively easy to see how every single byte ends up in the memory.
 - **Self-containment**: No external dependencies. 
 - **Reusability**: Easily clone and adapt to start new projects with confidence.
 - **Educational Value**: By following the commit history it will be clear how we can run application software on an embedded system absolutely from scratch.
 
 ## Repository Structure
+project-root/
+├── CMSIS-core/
+│   ├── inc
+│   └── src
+├── CMSIS-drivers/
+│   ├── inc
+│   └── src
+├── linker/
+│   └── linker.ld
+├── startup/
+│   └── startup.c
+├── app/
+│   └── main.c
+├── examples/
+│   ├── main_example1.c
+│   └── main_example2.c
+├── cmake/
+│   |── gcc-arm-none-eabi.cmake
+├── CMakeLists.txt
+└── README.md
+
+
+## Project History
+1. Adding a simple linker script
+
 
