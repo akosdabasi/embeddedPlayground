@@ -49,5 +49,9 @@ project-root/
     - for the moment we dont have standard library
     - so we dont have access to types like uint32_t from stdint.h
     - these typedefs are platform dependent
+3. Adding the startup file(startup.c) and main.c
+    - at this point we should be able to build the firmware and flash it on the target and see that we end up in the infinite while loop in main().
+    - this requires a toolchain: compiler, linker, debug probe drivers, debugger software...
+    - so before lets package the tools in a standardized dev container.
 
 
