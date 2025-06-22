@@ -72,6 +72,7 @@ add_custom_command(TARGET ${target_name} POST_BUILD
 )
 
 add_custom_command(TARGET ${target_name} POST_BUILD
+	COMMAND ${CMAKE_COMMAND} -E make_directory ${proj_path}/out
     COMMAND ${CMAKE_COMMAND} -E copy_if_different
         ${CMAKE_BINARY_DIR}/${target_name}.elf
         ${proj_path}/out/${target_name}.elf
