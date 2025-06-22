@@ -58,7 +58,7 @@ SECTIONS{
       _sdata = .;             
       *(.data SORT(.data.*))  /*sections will be placed in memory in a stable order*/
       _edata = .;             
-    } > flash AT > sram /*load to flash but execute from sram*/
+    } > sram AT > flash /*load to flash but execute from sram*/
 
     _sidata = LOADADDR(.data);
 
