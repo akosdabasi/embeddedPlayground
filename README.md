@@ -49,9 +49,39 @@ project-root/
     - for the moment we dont have standard library
     - so we dont have access to types like uint32_t from stdint.h
     - these typedefs are platform dependent
+    - we should also add .vscode/c_cpp_properties.json file to make IntelliSense and other things work well in VS Code
 3. Adding the startup file(startup.c) and main.c
-    - at this point we should be able to build the firmware and flash it on the target and see that we end up in the infinite while loop in main().
-    - this requires a toolchain: compiler, linker, debug probe drivers, debugger software...
-    - so before lets package the tools in a standardized dev container.
+    - at this point we should be able to build the firmware and flash it on the target and start debugging.
+    - this requires: (there are many solutions, I'm only listing the sw/hw that I'm using)
+    ((I will add a Dev Container solution to be able to avoid all the below tool setup))
+    ------------- bare minimum -------------------------------------------------------------
+        - debug probe (hw): STLink (on Nucleo board) with JLink firmware
+        - debug probe driver: JLink.exe
+            - requires a flash script for flashing (flash_script.jlink)
+        - debug sw: cortex-debug VS Code extension
+            - requires gdb and gdb-server(arm-none-eabi-gdb, JLinkGDBServerCL.exe)
+            - has to be configured in .vscode/launch.json
+        - toolchain (compiler, linker, assembler): the goal is to support multiple toolchains
+            - default toolchain: arm-none-eabi-xxx
+            - other supported toolchains(in future): clang
+    ------------- for keeping your sanity -----------------------------------------------------
+        - build system generator: we could use the toolchain directly to manually compile and link source code but no one should do that, if its not for educational reasons. A build system automates this process. A build system generator, creates build systems
+            - CMake: will be used to generate Make and/or Ninja build systems
+                - has to be configured in CMakeLists.txt + CMakePresets.json
+        - VS Code tasks for: Debug/Release builds, Flashing and other common tasks
+            - can be invoked on clicking a button with the Task Runner extension
+    -------------- ideal case ------------------------------------------------------------------
+        - all these tools are contained in a dev container image that you can pull and run locally with Docker + Dev Container extension and work inside it without having to install and set up most of these tools on your host PC. --> This will be provided in the future.
+4. Adding configuration files for the required toolchain/workflow
+     - .vscode/c_cpp_properties.json: VS Code needs it for IntelliSense and other functionalities
+     - .vscode/launch.json: cortex-debug configuration
+     - .vscode/STM32F103xx.svd: register definitions for cortex-debug
+     - .vscode/tasks.json: defines VS Code tasks to make life easier
+     - build_scripts: scripts used by the VS Code tasks
+     - CMakeLists.txt: CMake project file, defines how to build the project
+     - CMakePresets.json: contains predefined build configurations
+     - cmake: CMake modules referenced by CMakeLists.txt
+     
+    
 
 

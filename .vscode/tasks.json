@@ -1,0 +1,41 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build (Debug)",
+            "type": "shell",
+            "command": "build_scripts/cmake-build.sh",
+            "args": ["debug"],
+            "group": "build",
+            "dependsOn": "Generate (Debug)"
+        },
+        {
+            "label": "Build (Release)",
+            "type": "shell",
+            "command": "build_scripts/cmake-build.sh",
+            "args": ["release"],
+            "group": "build",
+            "dependsOn": "Generate (Release)"
+        },
+        {
+            "label": "Generate (Debug)",
+            "type": "shell",
+            "command": "build_scripts/cmake-gen.sh",
+            "args": ["debug"],
+            "group": "build"
+        },
+        {
+            "label": "Generate (Release)",
+            "type": "shell",
+            "command": "build_scripts/cmake-gen.sh",
+            "args": ["release"],
+            "group": "build"
+        },
+        {
+            "label": "Flash",
+            "type": "shell",
+            "command": "build_scripts/jlink_flash.sh",
+            "group": "test"
+        },
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "type": "cortex-debug",
+            "request": "launch",
+            "name": "Debug (J-Link)",
+            "cwd": "${workspaceRoot}",
+            "executable": "out/emb_playgnd.elf",
+            "servertype": "jlink",
+            "device": "STM32F103RB",
+            "interface": "swd",
+            "serialNumber": "",
+            "preLaunchTask": "",
+            "svdFile": "${workspaceRoot}/.vscode/STM32F103xx.svd",
+            "liveWatch": {
+                "enabled": true,
+                "samplesPerSecond": 4
+            }
+        },
+    ]
+}

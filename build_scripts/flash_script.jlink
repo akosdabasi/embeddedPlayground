@@ -1,0 +1,7 @@
+device STM32F103RB            
+if SWD                 
+speed 4000                    
+loadbin out/emb_playgnd.bin 0x08000000      
+r
+g
+qc
