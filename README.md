@@ -73,15 +73,16 @@ project-root/
     -------------- ideal case ------------------------------------------------------------------
         - all these tools are contained in a dev container image that you can pull and run locally with Docker + Dev Container extension and work inside it without having to install and set up most of these tools on your host PC. --> This will be provided in the future.
 4. Adding configuration files for the required toolchain/workflow
-     - .vscode/c_cpp_properties.json: VS Code needs it for IntelliSense and other functionalities
-     - .vscode/launch.json: cortex-debug configuration
-     - .vscode/STM32F103xx.svd: register definitions for cortex-debug
-     - .vscode/tasks.json: defines VS Code tasks to make life easier
-     - build_scripts: scripts used by the VS Code tasks
-     - CMakeLists.txt: CMake project file, defines how to build the project
-     - CMakePresets.json: contains predefined build configurations
-     - cmake: CMake modules referenced by CMakeLists.txt
-     
+    - .vscode/c_cpp_properties.json: VS Code needs it for IntelliSense and other functionalities
+    - .vscode/launch.json: cortex-debug configuration
+    - .vscode/STM32F103xx.svd: register definitions for cortex-debug
+    - .vscode/tasks.json: defines VS Code tasks to make life easier
+    - build_scripts: scripts used by the VS Code tasks
+    - CMakeLists.txt: CMake project file, defines how to build the project
+    - CMakePresets.json: contains predefined build configurations
+    - cmake: CMake modules referenced by CMakeLists.txt
+5. Adding processor core and MCU peripheral drivers
+    - I'm using an incomplete custom stipped down version for educational reasons, but CMSIS driver files should be provided by Arm (core drivers) and by ST (MCU peripherals)
     
 
 

@@ -21,3 +21,32 @@ _Static_assert(sizeof(uint32_t) == 4, "uint32_t is not 32 bits");
 _Static_assert(sizeof(int32_t)  == 4, "int32_t is not 32 bits");
 _Static_assert(sizeof(uint64_t) == 8, "uint64_t is not 64 bits");
 _Static_assert(sizeof(int64_t)  == 8, "int64_t is not 64 bits");
+
+//other type definitions
+//function pointers
+typedef void (*isr_callback_t)(void);
+
+//null pointer
+#define NULL ((void*)0);
+
+//type modifier defines for memmory mapped peripheral registers
+#define __vo volatile
+#define __IO volatile
+#define __I const volatile
+#define __O volatile
+
+
+//other common defines
+#define TRUE    1
+#define FALSE   0
+#define SET     TRUE
+#define UNSET   FALSE
+#define ENABLE  TRUE
+#define DISABLE FALSE
+#define HIGH    TRUE
+#define LOW     FALSE
+
+typedef enum {
+  disabled = 0,
+  enabled  = 1
+} state_t;
