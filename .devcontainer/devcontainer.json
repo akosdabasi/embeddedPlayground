@@ -11,11 +11,25 @@
             },
             "extensions": [
                 "ms-vscode.cpptools",
+                "ms-vscode.cpptools-extension-pack",
+                "ms-vscode.cpptools-themes",
+                "ms-vscode.cmake-tools",
+                "josetr.cmake-language-support-vscode",
+                "ms-vscode.makefile-tools",
                 "marus25.cortex-debug",
-                "ms-vscode.cmake-tools"
+                "mcu-debug.debug-tracker-vscode",
+                "mcu-debug.memory-view",
+                "mcu-debug.peripheral-viewer",
+                "mcu-debug.rtos-views",
+                "mhutchie.git-graph",
+                "ms-dotnettools.vscode-dotnet-runtime",
+                "sanaajani.taskrunnercode"
             ]
         }
     },
+    "runArgs": [
+        "--device=/dev/bus/usb:/dev/bus/usb"
+    ],
     "mounts": [
         "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
     ],
