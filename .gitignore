@@ -1,2 +1,3 @@
 build
 .devcontainer/arm-gnu-toolchain-14.2.rel1-x86_64-arm-none-eabi.tar.xz
+.devcontainer/cmake-4.0.3-linux-x86_64.tar.gz
