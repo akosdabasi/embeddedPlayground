@@ -2,14 +2,14 @@
   "configurations": [
     {
       "name": "arm-none-eabi",
-      "compilerPath": "C:/Program Files (x86)/GNU Arm Embedded Toolchain/10 2021.10/bin/arm-none-eabi-gcc.exe",
+      "compilerPath": "/opt/arm-gnu-toolchain-14.2.rel1-x86_64-arm-none-eabi/bin/arm-none-eabi-gcc",
       "includePath": [
         "${workspaceFolder}/stdlib/inc",
         "${workspaceFolder}/drivers/inc",
         "${workspaceFolder}/drivers/core/inc"
       ],
       "cStandard": "c11",
-      "intelliSenseMode": "windows-gcc-arm"
+      "intelliSenseMode": "linux-gcc-arm"
     }
   ],
   "version": 4
